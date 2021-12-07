@@ -26,7 +26,7 @@
         },
         {
             "name":"common",
-            "icon_dir":"aoe-assets/civilizations/common/units/",
+            "icon_dir":"aoe-assets/civilizations/common/",
             "units":[
                 
                 {
@@ -180,7 +180,59 @@
 
                 
             ],
-            "buildings":[],
+            "buildings":[
+                {
+                    "name":"warship",
+                    "icon":{
+                        "name":"warship.png"
+                    } 
+                },
+                {
+                    "name":"warship",
+                    "icon":{
+                        "name":"warship.png"
+                    } 
+                },
+                {
+                    "name":"warship",
+                    "icon":{
+                        "name":"warship.png"
+                    } 
+                },
+                {
+                    "name":"warship",
+                    "icon":{
+                        "name":"warship.png"
+                    } 
+                },
+
+                {
+                    "name":"warship",
+                    "icon":{
+                        "name":"warship.png"
+                    } 
+                },
+                {
+                    "name":"warship",
+                    "icon":{
+                        "name":"warship.png"
+                    } 
+                },
+                {
+                    "name":"warship",
+                    "icon":{
+                        "name":"warship.png"
+                    } 
+                },
+                {
+                    "name":"warship",
+                    "icon":{
+                        "name":"warship.png"
+                    } 
+                },
+           
+           
+            ],
             "upgrades":[]
             
         }

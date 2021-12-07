@@ -41,9 +41,10 @@ function insertCivIcons(civ_number){
 
     var units=aoedata.civilizations[civ_number].units
     var icon_dir=aoedata.civilizations[civ_number].icon_dir
+    var units_dir= icon_dir+"units/";
     for (let i = 0; i < units.length; i++) {
         let u=units[i]
-        var inlineCssBg='style="background: url(' + images[icon_dir+ u.icon.name] +');background-size: contain"';
+        var inlineCssBg='style="background: url(' + images[units_dir+ u.icon.name] +');background-size: contain"';
         div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn tippy ' 
         + u.name + '"'+ inlineCssBg +'>'+'</button></div>');
     }
