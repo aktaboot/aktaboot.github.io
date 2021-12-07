@@ -38,22 +38,32 @@ function selectAll(){
 // The  actual function that should do this should *better* parse and query the database
 function insertCivIcons(civ_number){
     var div= document.createElement("div");
+    
+    var icon_dir=aoedata.civilizations[civ_number].icon_dir
 
     var units=aoedata.civilizations[civ_number].units
-    var icon_dir=aoedata.civilizations[civ_number].icon_dir
     var units_dir= icon_dir+"units/";
     for (let i = 0; i < units.length; i++) {
-        let u=units[i]
+        let u=units[i];
         var inlineCssBg='style="background: url(' + images[units_dir+ u.icon.name] +');background-size: contain"';
         div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn tippy ' 
         + u.name + '"'+ inlineCssBg +'>'+'</button></div>');
+    }
+
+    var buildings=aoedata.civilizations[civ_number].buildings 
+    var buildings_dir=icon_dir+"buildings/"
+    for (let i = 0; i < buildings.length; i++) {
+        let b=buildings[i];
+        var inlineCssBg='style="background: url(' + images[buildings_dir+ b.icon.name] +');background-size: contain"';
+        div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn tippy ' 
+        + b.name + '"'+ inlineCssBg +'>'+'</button></div>');
     }
     //clean the grid-container
     document.getElementsByClassName("grid-container")[0].innerHTML="";
     document.getElementsByClassName("grid-container")[0].appendChild(div);
 };
 
-
+// this is a test function that just displays all the icons in the civilizations folder, nothing more
 function insertAllCivIcons(){
     var div= document.createElement("div");
 
