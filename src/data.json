@@ -1,0 +1,188 @@
+{
+    "civilizations" : [
+        {
+            "name":"abbasid"
+        },
+        {
+            "name":"mongols"
+        },
+        {
+            "name":"chinese"
+        },
+        {
+            "name":"english"
+        },
+        {
+            "name":"french"
+        },
+        {
+            "name":"rus"
+        },
+        {
+            "name":"sultanate"
+        },
+        {
+            "name":"hre"
+        },
+        {
+            "name":"common",
+            "icon_dir":"aoe-assets/civilizations/common/units/",
+            "units":[
+                
+                {
+                    "name":"villager",
+                    "icon":{
+                        "name":"villager.png"
+                    } 
+                },
+                {
+                    "name":"trade_cart",
+                    "icon":{
+                        "name":"trade_cart.png"
+                    } 
+
+                },
+                {
+                    "name":"scout",
+                    "icon":{
+                        "name":"scout.png"
+                    } 
+
+                },
+                {
+                    "name":"archer",
+                    "icon":{
+                        "name":"archer_2.png"
+                    } 
+
+                },
+                {
+                    "name":"crossbowman",
+                    "icon":{
+                        "name":"crossbowman_2.png"
+                    } 
+
+                },
+                {
+                    "name":"horseman",
+                    "icon":{
+                        "name":"horseman_1.png"
+                    } 
+
+                },
+                {
+                    "name":"manatarms",
+                    "icon":{
+                        "name":"manatarms_1.png"
+                    } 
+
+                },
+                {
+                    "name":"monk",
+                    "icon":{
+                        "name":"monk.png"
+                    } 
+
+                },
+                {
+                    "name":"handcannon",
+                    "icon":{
+                        "name":"handcannon_3.png"
+                    } 
+
+                },
+                
+                {
+                    "name":"mangonel",
+                    "icon":{
+                        "name":"mangonel.png"
+                    } 
+
+                },
+                {
+                    "name":"ram",
+                    "icon":{
+                        "name":"ram.png"
+                    } 
+
+                },
+                {
+                    "name":"siegetower",
+                    "icon":{
+                        "name":"siegetower.png"
+                    } 
+
+                },
+                {
+                    "name":"springald",
+                    "icon":{
+                        "name":"scorpion.png"
+                    } 
+
+                },
+                {
+                    "name":"trebuchet",
+                    "icon":{
+                        "name":"trebuchet.png"
+                    } 
+
+                },
+                {
+                    "name":"bombard",
+                    "icon":{
+                        "name":"bombard.png"
+                    } 
+
+                },
+                
+                {
+                    "name":"fishing_ship",
+                    "icon":{
+                        "name":"fishing_boat.png"
+                    } 
+
+                },
+                {
+                    "name":"trade_ship",
+                    "icon":{
+                        "name":"trade_ship.png"
+                    } 
+
+                },
+                {
+                    "name":"transport_ship",
+                    "icon":{
+                        "name":"transport.png"
+                    } 
+
+                },
+                {
+                    "name":"galley_ship",
+                    "icon":{
+                        "name":"war_galley.png"
+                    } 
+
+                },
+                {
+                    "name":"warship",
+                    "icon":{
+                        "name":"warship.png"
+                    } 
+
+                },
+                {
+                    "name":"fire_ship",
+                    "icon":{
+                        "name":"fireship.png"
+                    } 
+
+                }
+
+                
+            ],
+            "buildings":[],
+            "upgrades":[]
+            
+        }
+    ]
+}

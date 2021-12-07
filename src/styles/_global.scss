@@ -1,0 +1,77 @@
+// Palette colors
+// greenish rgb(54, 147, 123)
+// blueish rgb(39, 43, 61)
+// orange-ish rgb(142, 81, 49)
+// reddish rgb(87, 60, 57)
+// yellowish rgb(217, 158, 96)
+
+@font-face {
+  font-family: MaiolaBold ;
+  src: url("../fonts/maiolabold.otf");
+}
+
+h1 {
+  padding-top:1rem;
+  text-align: center;
+  font-family: MaiolaBold;
+  color: rgb(217, 158, 96)
+}
+
+
+body {
+  margin: 0;
+  background-image: url("../aoe-assets/bg/bg.png");
+  background-size: 100% auto ;
+  background-attachment: scroll !important;
+  background-repeat: no-repeat;
+  color:rgb(142, 81, 49);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto, 60px );
+  grid-gap: 1rem;
+  grid-auto-flow: row;
+  background-color: rgb(10, 10, 50,0.5);
+  margin: 2rem;
+  padding: 1rem;
+}
+
+.grid-item{
+  // background-color: black;
+  display:  inline-block;
+  margin: 0.5em;
+  align-self: center;
+  justify-self: center;
+}
+
+.btn{
+  // background-size: cover;
+  width: 60px;
+  height: 90px;
+  border: 2px solid;
+  border-color: rgba(25, 26, 27);
+  border-radius: 6px;
+  border-width: 2px;
+  position: center;
+}
+
+.btn:hover {
+  // border-color: white;
+  border-color: rgba(25, 25, 25);
+  border-width: 3px;
+}
+
+.tippy {
+    // background: url("../aoe-assets/villager.png");
+    background-position: auto;
+    height: 63px;
+    width: 63px;
+}
+
+.tooltip{
+  border-radius: 3%;
+  border: 2px solid rgba(41, 41, 41, 0.808);
+  width: 80%;
+}
