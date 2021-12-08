@@ -10,6 +10,30 @@
   src: url("../fonts/maiolabold.otf");
 }
 
+// Navigation Header
+.nav-header{
+  background-color: rgba(51, 51, 51, 0.8);
+}
+.nav-header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.nav-header li {
+  display: inline;
+  float: left;
+}
+.nav-header li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.nav-header li a:hover {
+  background-color: #111;
+}
 
 
 body {
@@ -51,12 +75,26 @@ h1 {
   }
 }
 
+
+
+
+.main-container{
+  background-color: rgb(10, 10, 50,0.5);
+  border-radius: 8px;
+  margin:2rem;
+  margin-top: 0px;
+  justify-content: center;
+  // padding-top: 2px;
+}
+
+// BUTTONS 
 .btn-bar{
   padding: 0.5rem;
-  margin-top: 0rem;
-  margin: 2rem;
+  padding-top: 1.5rem;
+  margin: 1rem;
+  margin-top: 0;
   margin-bottom: 0;
-  background-color: rgb(10, 10, 50,0.5);
+  // background-color: rgb(10, 10, 50,0.5);
 }
 .btn-bar button{
   background-color: #4CAF50; /* Green */
@@ -130,77 +168,39 @@ h1 {
   border-color:rgb(167, 105, 40);
 }
 
+
+
+// GRID
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto, 60px );
   grid-gap: 1rem;
   grid-auto-flow: row;
-  background-color: rgb(10, 10, 50,0.5);
-  margin: 2rem;
+  // background-color: rgb(10, 10, 50,0.5);
+  margin: 1rem;
   margin-top: 0;
   padding: 1rem;
 }
 
 .grid-item{
-  // background-color: black;
   display:  inline-block;
   margin: 0.5em;
   align-self: center;
   justify-self: center;
 }
 
-
-.btn{
-  width: 60px;
-  height: 90px;
+.icon{
   border: 2px solid;
   border-color:rgb(131, 122, 108);
   border-radius: 6px;
   border-width: 2px;
-  position: center;
+  height: 63px;
+  width: 63px;
+  background-position: auto;
+  background-repeat: no-repeat;
 }
 
-.btn:hover {
+.icon:hover {
   border-color: rgb(101, 93, 83);
   border-width: 3px;
-}
-
-// Tooltips
-.tippy {
-    // background: url("../aoe-assets/villager.png");
-    background-position: auto;
-    height: 63px;
-    width: 63px;
-}
-
-.tooltip{
-  border-radius: 3%;
-  border: 2px solid rgba(41, 41, 41, 0.808);
-  width: 80%;
-}
-
-// Navigation Bar
-.nav-header{
-  background-color: rgba(51, 51, 51, 0.8);
-}
-
-.nav-header ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-.nav-header li {
-  display: inline;
-  float: left;
-}
-.nav-header li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-.nav-header li a:hover {
-  background-color: #111;
 }

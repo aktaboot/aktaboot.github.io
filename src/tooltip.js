@@ -61,7 +61,7 @@ function insertCivIcons(civ_number){
     for (let i = 0; i < units.length; i++) {
         let u=units[i];
         var inlineCssBg='style="background: url(' + images[units_dir+ u.icon.name] +');background-size: contain;"';
-        div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn tippy ' 
+        div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn icon ' 
         + u.name + '"'+ inlineCssBg +'>'+'</button></div>');
     }
 
@@ -70,7 +70,7 @@ function insertCivIcons(civ_number){
     for (let i = 0; i < buildings.length; i++) {
         let b=buildings[i];
         var inlineCssBg='style="background: url(' + images[buildings_dir+ b.icon.name] +');background-size: contain;"';
-        div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn tippy ' 
+        div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn icon ' 
         + b.name + '"'+ inlineCssBg +'>'+'</button></div>');
     }
     //clean the grid-container
@@ -90,7 +90,7 @@ function insertAllCivIcons(i){
         ||  ( i=='u' && k.includes('units') )  
         ||    i=='a' ){
             var inlineCssBg='style="background: url(' + v + ');background-size: contain;"';
-            div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn tippy ' 
+            div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn icon ' 
             + k.replace(/\.[^/.]+$/, "") + '"'+ inlineCssBg +'>'+'</button></div>');
         }
     }
