@@ -3,6 +3,9 @@
 [X] add favicon
 [X] Civ bar with flags
 
+## Bugs
+[ ] Tooltip not working on icon, works on already created html items
+
 ## Simple tasks
 
 ## Bigger

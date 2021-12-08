@@ -43,7 +43,7 @@ body {
   background-size: 100% auto ;
   background-attachment: fixed; // This is not working for some reason
   background-repeat: no-repeat;
-  color:rgb(142, 81, 49);
+  color: rgb(217, 158, 96);
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -52,6 +52,7 @@ h1 {
   justify-content: center;
   font-family: MaiolaBold;
   color: rgb(217, 158, 96);
+  letter-spacing: 2px;
 }
 
 .header{
@@ -81,6 +82,7 @@ h1 {
 .main-container{
   background-color: rgb(10, 10, 50,0.5);
   border-radius: 8px;
+  padding: 0.5rem;
   margin:2rem;
   margin-top: 0px;
   justify-content: center;
@@ -117,6 +119,7 @@ h1 {
 .civ-bar{
   padding-top: 0;
   margin-top: 0;
+  border-bottom: 4px solid rgba(37, 37, 37, 0.61);
   
   #rus{
     background-position: center;
@@ -198,6 +201,7 @@ h1 {
   width: 63px;
   background-position: auto;
   background-repeat: no-repeat;
+  background-size: contain !important;
 }
 
 .icon:hover {

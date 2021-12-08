@@ -1,14 +1,18 @@
 import tippy  from "tippy.js";
-import villagerTtp from './aoe-assets/VillagerTooltip.png';
+import {delegate as tippyd} from 'tippy.js';
+// import ttip_bg from './aoe-assets/VillagerTooltip.png';
+
+
 import data from "./data.json";
 
 
+// var image=document.createElement("img");
+// image.src = villagerTtp;
+// image.className="tooltip";
+
 // IMPORT & PARSE JSON DATA
 var aoedata= JSON.parse(JSON.stringify(data));
-var image=document.createElement("img");
 
-image.src = villagerTtp;
-image.className="tooltip";
  
 // IMPORT ICONS
 function importAll(r) {
@@ -60,7 +64,7 @@ function insertCivIcons(civ_number){
     var units_dir= icon_dir+"units/";
     for (let i = 0; i < units.length; i++) {
         let u=units[i];
-        var inlineCssBg='style="background: url(' + images[units_dir+ u.icon.name] +');background-size: contain;"';
+        var inlineCssBg='style="background: url(' + images[units_dir+ u.icon.name] +');"';
         div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn icon ' 
         + u.name + '"'+ inlineCssBg +'>'+'</button></div>');
     }
@@ -69,7 +73,7 @@ function insertCivIcons(civ_number){
     var buildings_dir=icon_dir+"buildings/"
     for (let i = 0; i < buildings.length; i++) {
         let b=buildings[i];
-        var inlineCssBg='style="background: url(' + images[buildings_dir+ b.icon.name] +');background-size: contain;"';
+        var inlineCssBg='style="background: url(' + images[buildings_dir+ b.icon.name] +');"';
         div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn icon ' 
         + b.name + '"'+ inlineCssBg +'>'+'</button></div>');
     }
@@ -89,7 +93,7 @@ function insertAllCivIcons(i){
         ||  ( i=='b' && k.includes('buildings') ) 
         ||  ( i=='u' && k.includes('units') )  
         ||    i=='a' ){
-            var inlineCssBg='style="background: url(' + v + ');background-size: contain;"';
+            var inlineCssBg='style="background: url(' + v + ');"';
             div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn icon ' 
             + k.replace(/\.[^/.]+$/, "") + '"'+ inlineCssBg +'>'+'</button></div>');
         }
@@ -99,10 +103,28 @@ function insertAllCivIcons(i){
     document.getElementsByClassName("grid-container")[0].appendChild(div);
 };
 
-tippy('.villager', {  
-    content: () => image.cloneNode(true),
+
+
+
+
+// Tooltip stuff
+import ttip_bg from "./aoe-assets/hud-backgrounds/info_bg.png";
+var stats={
+       armor:3,
+       health: 2400,
+};
+console.log(ttip_bg)
+var ttip= document.createElement("div");
+// ttip.style.backgroundImage='url('+ttip_bg+')';
+ttip.style.backgroundColor= "rgb(0,0,0)" ;
+ttip.className="tooltip";
+
+var html = '<ul><li class="health">50</li><li class="armor">5</li></ul>'
+ttip.innerHTML= html;
+tippyd( '.grid-container', {
+    target: '.villager',
+    content: ttip,
+    trigger: "click",
+    // content: () => image.cloneNode(true),
     allowHTML: true,
 });
-
-
-// insertAllCivIcons('a');

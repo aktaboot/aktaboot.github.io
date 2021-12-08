@@ -2,6 +2,34 @@
 
 .tooltip{
   border-radius: 3%;
-  border: 2px solid rgba(41, 41, 41, 0.808);
-  width: 80%;
+  // border: 2px solid rgba(41, 41, 41, 0.808);
+  margin:0;
+  padding:0;
+  height: 100px;
+  width: 200px;
+
+  aspect-ratio: 168/88;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  
+
+  ul{
+    padding:1rem;
+    
+    li{
+      padding: 0 0 5px 0;
+      text-align:center;
+      list-style: none;
+      background-repeat: no-repeat;
+      background-size: 20px;
+      background-position: left; 
+    }
+      .health{
+        background-image: url("../aoe-assets/unit_stats/health.png");
+      }
+      .armor{
+        background-image: url("../aoe-assets/unit_stats/armor.png");
+      }
+  }
 }
