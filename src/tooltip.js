@@ -19,7 +19,7 @@ function importAll(r) {
 const images = importAll(require.context('./aoe-assets/civilizations/', true, /\.(png|jpe?g|svg)$/));
 
 // BUTTON VARS
-var btn_common = document.getElementById("select-common");
+var btn_common = document.getElementById("common");
 btn_common.addEventListener("click",selectCommon);
 var btn_all = document.getElementById("select-all");
 btn_all.addEventListener("click",selectAll);

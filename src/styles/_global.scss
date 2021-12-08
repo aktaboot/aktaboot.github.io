@@ -10,18 +10,12 @@
   src: url("../fonts/maiolabold.otf");
 }
 
-h1 {
-  padding-top:1rem;
-  text-align: center;
-  font-family: MaiolaBold;
-  color: rgb(217, 158, 96)
-}
 
 
 body {
   margin: 0;
   min-height: 100vh;
-  background-image: url("../aoe-assets/bg/bg.png");
+  background-image: url("../aoe-assets/bg/bg.png") !important;
   background-size: 100% auto ;
   background-attachment: fixed; // This is not working for some reason
   background-repeat: no-repeat;
@@ -29,20 +23,47 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+h1 {
+  text-align: center;
+  justify-content: center;
+  font-family: MaiolaBold;
+  color: rgb(217, 158, 96);
+}
+
+.header{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  
+  .how{
+    display: inline-block;
+    background-image: url("../aoe-assets/house_of_wisdom.png");
+    background-size: contain;
+    height: 1rem;
+    padding: 0.8rem;
+    aspect-ratio: 1/1;
+  }
+  .title{
+    padding:0.5rem;
+    margin: 0.5rem;
+    text-align: center;
+    display: inline-block;
+  }
+}
+
 .btn-bar{
   padding: 0.5rem;
+  margin-top: 0rem;
   margin: 2rem;
   margin-bottom: 0;
   background-color: rgb(10, 10, 50,0.5);
 }
 .btn-bar button{
   background-color: #4CAF50; /* Green */
-  border: none;
-  padding: 16px 32px;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
@@ -54,7 +75,59 @@ body {
 
 .btn-bar button:hover {
   background-color: #4CAF50;
-  color: white;
+}
+.civ-bar{
+  padding-top: 0;
+  margin-top: 0;
+  
+  #rus{
+    background-position: center;
+    background-size: contain;
+    background-image: url("../aoe-assets/flags/rus_flag.png");
+  }
+  #abbasid{
+    background-position: center;
+    background-size: contain;
+    background-image: url("../aoe-assets/flags/abbasid_flag.png");
+  }
+  #mongols{
+    background-position: center;
+    background-size: contain;
+    background-image: url("../aoe-assets/flags/mongols_flag.png");
+  }
+  #english{
+    background-position: center;
+    background-size: contain;
+    background-image: url("../aoe-assets/flags/english_flag.png");
+  }
+  #french{
+    background-position: center;
+    background-size: contain;
+    background-image: url("../aoe-assets/flags/french_flag.png");
+  }
+  #delhi{
+    background-position: center;
+    background-size: contain;
+    background-image: url("../aoe-assets/flags/delhi_flag.png");
+  }
+  #hre{
+    background-position: center;
+    background-size: contain;
+    background-image: url("../aoe-assets/flags/hre_flag.png");
+  }
+  #chinese{
+    background-position: center;
+    background-size: contain;
+    background-image: url("../aoe-assets/flags/chinese_flag.png");
+  }
+
+}
+
+.civ-bar button{
+  min-width: 40px ;
+  width: 4rem;
+  aspect-ratio: 104/56;
+  border-color:rgb(167, 105, 40);
 }
 
 .grid-container {
@@ -78,19 +151,17 @@ body {
 
 
 .btn{
-  // background-size: cover;
   width: 60px;
   height: 90px;
   border: 2px solid;
-  border-color: rgba(25, 26, 27);
+  border-color:rgb(131, 122, 108);
   border-radius: 6px;
   border-width: 2px;
   position: center;
 }
 
 .btn:hover {
-  // border-color: white;
-  border-color: rgba(25, 25, 25);
+  border-color: rgb(101, 93, 83);
   border-width: 3px;
 }
 
@@ -118,7 +189,6 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  // background-color: #333;
 }
 .nav-header li {
   display: inline;

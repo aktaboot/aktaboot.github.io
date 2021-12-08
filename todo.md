@@ -1,10 +1,9 @@
 ## Done
 [X] router
+[X] add favicon
+[X] Civ bar with flags
 
 ## Simple tasks
-[ ] add favicon
-[ ] dropdown menu for civs
-https://www.w3schools.com/howto/howto_js_dropdown.asp
 
 ## Bigger
 [ ] better database
