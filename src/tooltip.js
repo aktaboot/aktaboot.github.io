@@ -2,6 +2,7 @@ import tippy  from "tippy.js";
 import villagerTtp from './aoe-assets/VillagerTooltip.png';
 import data from "./data.json";
 
+
 // IMPORT & PARSE JSON DATA
 var aoedata= JSON.parse(JSON.stringify(data));
 var image=document.createElement("img");
