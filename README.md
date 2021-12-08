@@ -40,7 +40,7 @@ To access the source files, checkout to the dev branch
 
 ### Pushing your changes
 
-Since the website is hosted on **Github Pages**, the repo's **main** branch should have the production files which are located in the *dist/* directory.
+Since the website is hosted on **Github Pages**, the repo's **main** branch should have the production files which are located in the **dist/** directory.
 
 To do so, we have to push the files in the **dist/** directory onto the main branch:
 
