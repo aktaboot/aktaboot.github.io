@@ -22,16 +22,30 @@ var btn_common = document.getElementById("select-common");
 btn_common.addEventListener("click",selectCommon);
 var btn_all = document.getElementById("select-all");
 btn_all.addEventListener("click",selectAll);
-
+var btn_units = document.getElementById("select-units");
+btn_units.addEventListener("click",selectUnits);
+var btn_buildings = document.getElementById("select-buildings");
+btn_buildings.addEventListener("click",selectBuildings);
+var btn_upgrades = document.getElementById("select-upgrades");
+btn_upgrades.addEventListener("click",selectUpgrades);
 
 function selectCommon(){
     insertCivIcons(8);
     console.log("select-common")
 };
+function selectUnits(){
+    insertAllCivIcons('u');
+};
+function selectBuildings(){
+    insertAllCivIcons('b');
+};
+function selectUpgrades(){
+    insertAllCivIcons('p');
+};
 
 function selectAll(){
-    insertAllCivIcons();
-    console.log("select-all")
+    insertAllCivIcons('a');
+    // console.log("select-all")
 };
 
 // This is still a template for testing. Only parses units
@@ -45,7 +59,7 @@ function insertCivIcons(civ_number){
     var units_dir= icon_dir+"units/";
     for (let i = 0; i < units.length; i++) {
         let u=units[i];
-        var inlineCssBg='style="background: url(' + images[units_dir+ u.icon.name] +');background-size: contain"';
+        var inlineCssBg='style="background: url(' + images[units_dir+ u.icon.name] +');background-size: contain;"';
         div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn tippy ' 
         + u.name + '"'+ inlineCssBg +'>'+'</button></div>');
     }
@@ -54,7 +68,7 @@ function insertCivIcons(civ_number){
     var buildings_dir=icon_dir+"buildings/"
     for (let i = 0; i < buildings.length; i++) {
         let b=buildings[i];
-        var inlineCssBg='style="background: url(' + images[buildings_dir+ b.icon.name] +');background-size: contain"';
+        var inlineCssBg='style="background: url(' + images[buildings_dir+ b.icon.name] +');background-size: contain;"';
         div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn tippy ' 
         + b.name + '"'+ inlineCssBg +'>'+'</button></div>');
     }
@@ -64,15 +78,20 @@ function insertCivIcons(civ_number){
 };
 
 // this is a test function that just displays all the icons in the civilizations folder, nothing more
-function insertAllCivIcons(){
+function insertAllCivIcons(i){
     var div= document.createElement("div");
 
     
     for (const [k,v] of Object.entries(images)){
         // console.log(k,v);
-        var inlineCssBg='style="background: url(' + v + ');background-size: contain"';
-        div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn tippy ' 
-        + k.replace(/\.[^/.]+$/, "") + '"'+ inlineCssBg +'>'+'</button></div>');
+        if( ( i=='p' && k.includes('upgrades')  )
+        ||  ( i=='b' && k.includes('buildings') ) 
+        ||  ( i=='u' && k.includes('units') )  
+        ||    i=='a' ){
+            var inlineCssBg='style="background: url(' + v + ');background-size: contain;"';
+            div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="btn tippy ' 
+            + k.replace(/\.[^/.]+$/, "") + '"'+ inlineCssBg +'>'+'</button></div>');
+        }
     }
     //clean the grid-container
     document.getElementsByClassName("grid-container")[0].innerHTML="";
@@ -85,4 +104,4 @@ tippy('.villager', {
 });
 
 
-insertAllCivIcons();
+// insertAllCivIcons('a');
