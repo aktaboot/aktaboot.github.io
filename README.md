@@ -34,7 +34,7 @@ To access the source files, checkout to the dev branch
 
 `npm run build-dev` for more dev-friendly output in the **dist/** directory
 
-`npm run clean` to delete the dist/ directory
+`npm run clean` to delete the **dist/** directory
 
 
 
