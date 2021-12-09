@@ -1,46 +1,94 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        
-        <title>House of Wisdom</title>
-    </head>
-    <body>
-        <div id="root"></div>
-        <div class="nav-header">
-            <ul>
-                <li><a class="active" href="index.html">HoW</a></li>
-                <li><a href="ressources.html">Ressources</a></li>
-            </ul>
-        </div>
-        
-        <h1>
-            <div class="header">
-                <div class="how"></div> <div class="title">House of Wisdom</div>
-            </div>
-        </h1>
+  <head>
+    <title>House of Wisdom</title>
+  </head>
 
-        <div class="main-container">
-            <div class="menu-bar">
-                <div class="btn-bar">
-                    <button id="select-units">Units</button>
-                    <button id="select-buildings">Buildings</button>
-                    <button id="select-upgrades">Upgrades</button>
-                </div>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 
-                <div class="civ-bar">
-                    <button id="abbasid" title="Abbasid"></button>
-                    <button id="chinese" title="Chinese"></button>
-                    <button id="english" title="English"></button>
-                    <button id="french" title="French"></button>
-                    <button id="hre" title="Holy Roman Empire"></button>
-                    <button id="mongols" title="Mongols"></button>
-                    <button id="rus" title="Rus"></button>
-                    <button id="delhi" title="Delhi Sultanate"></button>
-                    <button id="common" title="Common"></button>
-                </div>
-            </div>
-            <div class="grid-container"></div> 
+  <body>
+    <div id="root"></div>
+    <div class="nav-header">
+      <ul>
+        <li><a class="active" href="index.html">HoW</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+      </ul>
+    </div>
+
+    <h1>
+      <div class="header">
+        <div class="how"></div>
+        <div class="title">House of Wisdom</div>
+      </div>
+    </h1>
+
+    <div class="main-container">
+      <div class="menu-bar">
+        <div class="btn-bar">
+          <button id="select-units">Units</button>
+          <button id="select-buildings">Buildings</button>
+          <button id="select-upgrades">Upgrades</button>
+          <button id="select-civs">Civs</button>
+          <button id="select-maps">Maps</button>
+
+          <!-- <button
+            onclick="document.getElementById('menu').style.display='block'"
+            class="w3-button w3-black">
+            Test
+          </button> -->
+        </div> 
+          
+          <div class="civ-bar">
+            <button id="abbasid" title="Abbasid"></button>
+            <button id="chinese" title="Chinese"></button>
+            <button id="english" title="English"></button>
+            <button id="french" title="French"></button>
+            <button id="hre" title="Holy Roman Empire"></button>
+            <button id="mongols" title="Mongols"></button>
+            <button id="rus" title="Rus"></button>
+            <button id="delhi" title="Delhi Sultanate"></button>
+            <button id="common" title="Common">Common</button>
+          </div>
         </div>
-    </body>
+
+        <div class="grid-container"></div>
+      </div>
+
+      <div id="menu" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom">
+          <div class="w3-container w3-black w3-display-container">
+            <span
+              onclick="document.getElementById('menu').style.display='none'"
+              class="w3-button w3-display-topright w3-large"
+              >x</span
+            >
+            <h1>Starters</h1>
+          </div>
+          <div class="w3-container">
+            <h5>Tomato Soup <b>$2.50</b></h5>
+            <h5>Chicken Salad <b>$3.50</b></h5>
+            <h5>Bread and Butter <b>$1.00</b></h5>
+          </div>
+          <div class="w3-container w3-black">
+            <h1>Main Courses</h1>
+          </div>
+          <div class="w3-container">
+            <h5>Grilled Fish and Potatoes <b>$8.50</b></h5>
+            <h5>Italian Pizza <b>$5.50</b></h5>
+            <h5>Veggie Pasta <b>$4.00</b></h5>
+            <h5>Chicken and Potatoes <b>$6.50</b></h5>
+            <h5>Deluxe Burger <b>$5.00</b></h5>
+          </div>
+          <div class="w3-container w3-black">
+            <h1>Desserts</h1>
+          </div>
+          <div class="w3-container">
+            <h5>Fruit Salad <b>$2.50</b></h5>
+            <h5>Ice cream <b>$2.00</b></h5>
+            <h5>Chocolate Cake <b>$4.00</b></h5>
+            <h5>Cheese <b>$5.50</b></h5>
+          </div>
+        </div>
+      </div>
+  </body>
 </html>
-  

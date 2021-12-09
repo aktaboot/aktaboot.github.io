@@ -127,6 +127,8 @@ h1 {
   background-color: #4CAF50;
 }
 
+
+
 .civ-bar button{
   min-width: 80px ;
   width: 8rem;
@@ -140,7 +142,8 @@ h1 {
 }
 
 .civ-bar{
-  display: flex;
+  display: none;
+  // display: flex;
   padding-top: 0;
   margin-top: 0;
   justify-content: center;
@@ -207,6 +210,34 @@ h1 {
   margin: 0.5em;
   align-self: center;
   justify-self: center;
+  border:none;
+}
+
+.grid-map{
+  border:none;
+  min-width: 80px ;
+  width: 8rem;
+  aspect-ratio: 1/1;
+  background-position: auto;
+  background-repeat: no-repeat;
+  background-size: contain !important;
+}
+.grid-map:hover {
+  opacity: 70%;
+}
+
+.grid-flag{
+  border:none;
+  min-width: 80px ;
+  width: 8rem;
+  aspect-ratio: 104/56;
+  background-position: auto;
+  background-repeat: no-repeat;
+  background-size: contain !important;
+}
+
+.grid-flag:hover{
+opacity: 70%;
 }
 
 .icon{
