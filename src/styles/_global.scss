@@ -227,6 +227,7 @@ h1 {
 }
 
 .grid-flag{
+  display: flex;
   border:none;
   min-width: 80px ;
   width: 8rem;
@@ -257,3 +258,7 @@ opacity: 70%;
   border-width: 3px;
   opacity: 80%;
 }
+
+// .w3-modal{
+//   display:none;
+// }

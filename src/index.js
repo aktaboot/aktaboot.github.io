@@ -1,11 +1,16 @@
 import "./styles/index.scss";
 import "./tooltip.js";
-import data from "./data.json";
+import Data from "./data.json";
+// import Civsdata from "./Overview.json";
+import civs from "./Overview.json";
+
+
+var civ_names=["abbasid","delhi","hre", "rus", "mongols","chinese", "english", "french"];
 
 // IMPORT & PARSE JSON DATA
-var aoedata= JSON.parse(JSON.stringify(data));
+var aoedata= JSON.parse(JSON.stringify(Data));
+// var civs=JSON.parse(JSON.stringify(Civsdata));
 
- 
 // IMPORT ICONS
 function importAll(r) {
   let images = {};
@@ -17,25 +22,20 @@ const flags = importAll(require.context('./aoe-assets/flags/', false, /\.(png|jp
 const maps = importAll(require.context('./aoe-assets/maps/', false, /\.(png|jpe?g|svg)$/));
 
 // BUTTON VARS
-var btn_units = document.getElementById("select-units");
-btn_units.addEventListener("click",selectUnits);
-var btn_buildings = document.getElementById("select-buildings");
-btn_buildings.addEventListener("click",selectBuildings);
-var btn_upgrades = document.getElementById("select-upgrades");
-btn_upgrades.addEventListener("click",selectUpgrades);
-var btn_common = document.getElementById("common");
-btn_common.addEventListener("click",selectCommon);
-
-var btn_civs = document.getElementById("select-civs");
-btn_civs.addEventListener("click",selectCivs);
-var btn_maps = document.getElementById("select-maps");
-btn_maps.addEventListener("click",selectMaps);
+createAllFlagModals();
+document.getElementById("select-units").addEventListener("click",selectUnits);
+document.getElementById("select-buildings").addEventListener("click",selectBuildings);
+document.getElementById("select-upgrades").addEventListener("click",selectUpgrades);
+document.getElementById("common").addEventListener("click",selectCommon);
+document.getElementById("select-civs").addEventListener("click",selectCivs);
+document.getElementById("select-maps").addEventListener("click",selectMaps);
 
 function selectCivs(){
     document.getElementsByClassName("grid-container").innerHTML="";
     document.getElementsByClassName("civ-bar")[0].style.display="none";
     insertFlags();
 };
+
 function selectMaps(){
     document.getElementsByClassName("grid-container").innerHTML="";
     document.getElementsByClassName("civ-bar")[0].style.display="none";
@@ -58,24 +58,28 @@ function selectUpgrades(){
     insertAllCivIcons('p');
 };
 
-
-function selectAll(){
-    insertAllCivIcons('a');
-};
-
 function insertFlags(){
     var div= document.createElement("div");
-    
     for (const [k,v] of Object.entries(flags)){
-        // console.log(k,v);
-        var inlineCssBg='style="background: url(' + v + ');"';
-        div.insertAdjacentHTML('beforeend','<div class=grid-item><button class="grid-flag '
-        + k.replace("_flag.png","")+'"'+  inlineCssBg +'>'+'</button></div>');
+        var civ_name= k.replace("_flag.png","");
+        
+        var div2= document.createElement("div");
+        div2.className="grid-item";
+        var div3= document.createElement("div");
+        div3.style.backgroundImage='url('+v+')';
+        div3.className="grid-flag "+civ_name;
+        
+        div2.insertAdjacentElement("beforeend",div3);
+        div.insertAdjacentElement("beforeend",div2);
     }
     //clean the grid-container and add to it
     document.getElementsByClassName("grid-container")[0].innerHTML="";
     document.getElementsByClassName("grid-container")[0].appendChild(div);
 
+    //Add Events on flags
+    for (let i = 0; i < civ_names.length; i++) {
+        document.getElementsByClassName(civ_names[i])[0].addEventListener("click", () => {openCivModal(civ_names[i])});
+    }
 };
 
 function insertMaps(){
@@ -144,3 +148,52 @@ function insertAllCivIcons(i){
     document.getElementsByClassName("grid-container")[0].innerHTML="";
     document.getElementsByClassName("grid-container")[0].appendChild(div);
 };
+
+
+function createAllFlagModals(){
+    for (let i = 0; i < civ_names.length; i++) {
+        createCivModal(civ_names[i]);
+    }
+};
+
+function createCivModal(civ_name){
+    var id=civ_name+"-modal";
+    var civ=civs[civ_name];
+    var div= document.createElement("div");
+    var div2= document.createElement("div");
+    var span= document.createElement("span");
+    div.id=id;
+    div.className="w3-modal" ;
+    div.style.display="none";
+
+    div2.className="w3-modal-content w3-animate-zoom";
+    span.className="w3-button w3-display-topright w3-large x-close";
+    span.innerText="X";
+    span.addEventListener("click",() => {closeModal(civ_name);})
+
+    // Add stuff to Modals here
+    var fields=civs["fields"];
+    var html="";
+    for (let i = 1; i < civ.length; i++) {
+        if(civ[i]=="") continue;
+        html+='<h3>'+fields[i]+"</h3>"+civ[i]+'';
+    }
+    // html+="</ul>";
+
+    div2.insertAdjacentElement('beforeend',span);
+    div2.insertAdjacentHTML('beforeend','<div><h1>'+civ[0]+'</h1></div>');
+    div2.insertAdjacentHTML('beforeend',html);
+    
+    div.insertAdjacentElement('beforeend',div2)
+    document.getElementsByClassName("modal-container")[0].appendChild(div);
+}
+
+
+function openCivModal(civ_name){
+    document.getElementById(civ_name+"-modal").style.display="block";
+};
+function closeModal(civ_name){
+    document.getElementById(civ_name+"-modal").style.display='none';
+};
+
+// console.log(civs[civ_names[0]][0]);
