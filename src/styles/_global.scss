@@ -258,3 +258,14 @@ opacity: 70%;
   border-width: 3px;
   opacity: 80%;
 }
+
+.w3-modal{
+}
+.w3-modal-content{
+  background-color: black !important; 
+  h3{
+    color:rgb(184, 11, 11);
+    border-bottom: 1px solid white;
+    text-align: center;
+  }
+}

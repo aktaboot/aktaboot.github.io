@@ -156,6 +156,7 @@ function createAllFlagModals(){
     }
 };
 
+
 function createCivModal(civ_name){
     var id=civ_name+"-modal";
     var civ=civs[civ_name];
@@ -176,7 +177,8 @@ function createCivModal(civ_name){
     var html="";
     for (let i = 1; i < civ.length; i++) {
         if(civ[i]=="") continue;
-        html+='<h3>'+fields[i]+"</h3>"+civ[i]+'';
+        if(fields[i]=="")   html+=civ[i];
+        else html+='<h3>'+fields[i]+"</h3>"+civ[i]+'';
     }
     // html+="</ul>";
 
