@@ -171,19 +171,27 @@ function createCivModal(civ_name){
     span.innerText="X";
     span.addEventListener("click",() => {closeModal(civ_name);})
 
-    // Add stuff to Modals here
-    var fields=civs["fields"];
-    var html="";
-    for (let i = 1; i < civ.length; i++) {
-        if(civ[i]=="") continue;
-        html+='<h3>'+fields[i]+"</h3>"+civ[i]+'';
-    }
-    // html+="</ul>";
 
     div2.insertAdjacentElement('beforeend',span);
     div2.insertAdjacentHTML('beforeend','<div><h1>'+civ[0]+'</h1></div>');
-    div2.insertAdjacentHTML('beforeend',html);
+    // div2.insertAdjacentHTML('beforeend',html);
     
+    // Add stuff to Modals here
+    var fields=civs["fields"];
+    var html="";
+    var div3= document.createElement("div");
+    for (let i = 1; i < civ.length; i++) {
+        if(fields[i]=="") html+=civ[i];
+        if(civ[i]=="") continue;
+        else{
+            div3.insertAdjacentHTML('beforeend',html);
+            div2.insertAdjacentElement('beforeend',div3)
+            var div3= document.createElement("div");
+            div3.style.display="flex";
+            html='<h3>'+fields[i]+"</h3></br>"+civ[i];
+        }
+        // html+='<h3>'+fields[i]+"</h3>"+civ[i]+'';
+    }
     div.insertAdjacentElement('beforeend',div2)
     document.getElementsByClassName("modal-container")[0].appendChild(div);
 }
