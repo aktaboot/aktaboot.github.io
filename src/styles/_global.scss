@@ -259,13 +259,18 @@ opacity: 70%;
   opacity: 80%;
 }
 
-.w3-modal{
-}
 .w3-modal-content{
+  // padding: 1rem;
+  padding-bottom: 3rem !important;
   background-color: black !important; 
   h3{
     color:rgb(184, 11, 11);
     border-bottom: 1px solid white;
     text-align: center;
   }
+}
+
+.w3-modal-content{
+  padding: 1rem !important;
+  // margin: 20px !important ;
 }

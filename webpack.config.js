@@ -54,8 +54,8 @@ module.exports ={
             "filename":"index.html"
         }),
         new HtmlWebpackPlugin({
-            "template": "./src/ressources.html",
-            "filename": "ressources.html"
+            "template": "./src/resources.html",
+            "filename": "resources.html"
         }),
         new CopyWebpackPlugin({
             "patterns": [".nojekyll",".gitignore"],
