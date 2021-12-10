@@ -181,8 +181,8 @@ function createCivModal(civ_name){
     var html="";
     var div3= document.createElement("div");
     for (let i = 1; i < civ.length; i++) {
-        if(fields[i]=="") html+=civ[i];
         if(civ[i]=="") continue;
+        if(fields[i]=="") html+=civ[i];
         else{
             div3.insertAdjacentHTML('beforeend',html);
             div2.insertAdjacentElement('beforeend',div3)
